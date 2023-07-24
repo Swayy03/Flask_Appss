@@ -8,14 +8,14 @@ if __name__ == '__app__':
     app.run(debug=True)
 
 
-
-@app.route("/hello")
+@app.route("/login")
 def index(): 
-    flash("What's your name?")
-    return render_template("index.html")
+    flash("What is your name?")  
+    return render_template("index.html")   
 
-@app.route("/greet", methods=["POST","GET"])
-def greet():
-    flash("Hey " + str(request.form['name_input']) + ", great to see you")
+
+@app.route("/gohome", methods=["POST","GET"])
+def join():
+    flash("Hey " + str(request.form['name_input']) + ", would you like to join your App")
     request.form['name_input']
-    return render_template("index.html")
+    return render_template("home.html")

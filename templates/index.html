@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css') }}">
-    <title>SayHello</title>
+    <title> {% block title%}Login{%endblock%} </title>
 </head>
 <body>
 <div class="sign_up_main">
@@ -16,14 +16,13 @@
     </div>
     <p></p>
     <div class="sign_up_form">
-        <form action="greet" method="post">
-            {%for message in get_flashed_messages()%}
-            <p> {{message}} </p>
-            {%endfor%}
-
+        <form action="gohome" method="post">
+           <p>Enter Username:</p>
            <input type="text" name="name_input" id="Name_input">
+           <p>Enter Password:</p>
+           <input type="text" name = "password" id="password">
             <br>
-           <input type="submit" value="GREET" id="greet">
+           <input type="submit" value="join" id="greet">
         </form>
     </div>
 </div>
